@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
   string str; 
   while (std::getline(file, str))
   {
-    cout << str << endl;
+    str >>  
   }
   file.close();
 
