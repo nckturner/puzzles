@@ -8,9 +8,11 @@ from timeit import default_timer as timer
 #heights = [2,1,4,2,2,5,2,2,4,4,1,2]
 # vol: 10
 
-heights = [5,1,3,1,4,1,3,1,2,1,4]
+#heights = [5,1,3,1,4,1,3,1,2,1,4]
 # vol: 19
 
+heights = [2,2,1,1,3,3,2,2,1,1,4,4]
+# vol: 8
 
 """ A puddle in constructed in this program
 with a tuple:
@@ -110,7 +112,7 @@ def puddle_volume(heights):
     for p in puddles:
         li,lh,ri,rh = p
         for i in range(li+1,ri):
-            total_vol += water_level(p) - heights[i]
+            total_vol += water_level(p) - min(heights[i], water_level(p))
             print("Vol: ",total_vol)
 
     print("\nRun finished")
